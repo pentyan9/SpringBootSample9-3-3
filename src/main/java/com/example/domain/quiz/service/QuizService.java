@@ -9,6 +9,7 @@ public interface QuizService {
     /** ユーザー取得 */
     public List<MQuiz> getQuiz();
 
+    /** ユーザー取得1件 */
 	public MQuiz getQuizOne(Integer id); 
 
 }
