@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/layout}">
+<head>
+  <title>クイズ一覧</title>
+  <!-- 個別CSS読込 -->
+  <link rel="stylesheet" th:href="@{/css/user/list.css}">
+</head>
+<body>
+  <div layout:fragment="content">
+    <div class="header border-bottom">
+      <h1 class="h2">クイズ一覧画面</h1>
+    </div>
+    <!-- 一覧表示 -->
+    <div>
+      <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th class="th-width">クイズID</th>
+            <th class="th-width">クイズ</th>
+            <th class="th-width">答え</th>
+            <th class="th-width">作成者</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="item: ${quizList}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.question}"></td>
+            <td th:text="${item.answer}"></td>
+            <td th:text="${item.author}"></td>
+            <td>
+              <a class="btn btn-primary" th:href="@{'/quiz/detail/' + ${item.id}}">
+                詳細
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

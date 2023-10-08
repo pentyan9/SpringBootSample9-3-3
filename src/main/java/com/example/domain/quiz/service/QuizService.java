@@ -1,0 +1,14 @@
+package com.example.domain.quiz.service;
+
+import java.util.List;
+
+import com.example.domain.quiz.model.MQuiz;
+
+public interface QuizService {
+
+    /** ユーザー取得 */
+    public List<MQuiz> getQuiz();
+
+	public MQuiz getQuizOne(Integer id); 
+
+}
